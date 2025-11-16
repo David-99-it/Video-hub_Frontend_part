@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Video-hub - video</title>
+<link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+     <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Введите запрос" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">🔍</button>
+        <a class="user-button" href="/vidieohub/player/templates/profile/index.html">
+                    <img src="user.jpg" alt="User">
+                </a>
+      </form>
+     </div>
+    </nav>
+    <div class="main_video">
+        <div class="video-card">
+    <video id="mainPlayer" controls width="90%" style="max-height: 60vh;">
+    <source id="mainSource" src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4" type="video/mp4">
+    Ваш браузер не поддерживает видео.
+</video>
+    <div class="video-description">
+      <h3>Название</h3>
+      <h5>Канал</h5>
+      <h5>Дата публикации: 14.11.2025</h5>
+    </div>
+  </div>
+    </div>
+</body>
+</html>
