@@ -44,7 +44,7 @@ body {
 
 .video-card video {
     width: 125vh; /* растягиваем под ширину карточки */
-    height: 90vh; /* половина высоты экрана */
+    height: 70vh; /* половина высоты экрана */
     object-fit: cover; /* видео красиво вписывается, не искажаясь */
     align-self: center;
 }

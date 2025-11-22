@@ -7,6 +7,8 @@ body {
     flex-wrap: wrap;
     gap: 10px;
 }
+.open-player { text-decoration: none; color: inherit; }
+
 .available_menu{
     display: flex;
     flex-wrap: wrap;

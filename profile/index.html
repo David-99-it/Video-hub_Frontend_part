@@ -3,339 +3,280 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Профиль пользователя</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 <body>
     <div class="user_profile">
-    <img class="profile_picture" src="user.jpg" alt="User" onerror="this.src='default.png'">
-    <h2>User123</h2>
-    <h3>Ваши сохраненные видео: </h3>
-    <hr style="border: none; height: 3px; background-color: rgb(114, 112, 112); width: 100%;">
+        <img class="profile_picture" src="user.jpg" alt="User" onerror="this.src='default.png'">
+        <h2>User123</h2>
+        <h3>Ваши сохраненные видео: </h3>
+        <hr style="border: none; height: 3px; background-color: rgb(114, 112, 112); width: 100%;">
     </div>
+
     <div class="save_videos" id="saved-videos">
         <div id="no-saved-videos" style="display: none; text-align:center; padding:20px;">
-        <h3>У вас нет сохранённых видео</h3>
-    </div>
+            <h3>У вас нет сохранённых видео</h3>
+        </div>
+
         <!-- Видео 1 -->
-        <div class="video-card">
-            <a href="https://www.w3schools.com/html/mov_bbb.mp4" target="_blank">
-                <video class="video" muted preload="metadata"
-                       onmouseenter="this.play()" 
-                       onmouseleave="this.pause(); this.currentTime = 0;">
-                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-                </video>
-            </a>
+        <div class="video-card" data-src="https://www.w3schools.com/html/mov_bbb.mp4" data-title="Видео 1" data-channel="Канал 1" data-date="14.11.2025">
+            <video class="video" muted preload="metadata" onmouseenter="this.play()" onmouseleave="this.pause(); this.currentTime = 0;">
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            </video>
             <div class="video-description">
-                <h3>Название</h3>
-                <h5>Канал</h5>
+                <h3>Видео 1</h3>
+                <h5>Канал 1</h5>
                 <h5>Дата публикации: 14.11.2025</h5>
             </div>
             <div class="delete-row">
-              <button class="delete-btn">Удалить</button>
+                <button class="delete-btn">Удалить</button>
             </div>
         </div>
 
         <!-- Видео 2 -->
-        <div class="video-card">
-            <a href="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4" target="_blank">
-                <video class="video" muted preload="metadata"
-                       onmouseenter="this.play()" 
-                       onmouseleave="this.pause(); this.currentTime = 0;">
-                    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4" type="video/mp4">
-                </video>
-            </a>
+        <div class="video-card" data-src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4" data-title="Видео 2" data-channel="Канал 2" data-date="14.11.2025">
+            <video class="video" muted preload="metadata" onmouseenter="this.play()" onmouseleave="this.pause(); this.currentTime = 0;">
+                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4" type="video/mp4">
+            </video>
             <div class="video-description">
-                <h3>Название</h3>
-                <h5>Канал</h5>
+                <h3>Видео 2</h3>
+                <h5>Канал 2</h5>
                 <h5>Дата публикации: 14.11.2025</h5>
             </div>
             <div class="delete-row">
-              <button class="delete-btn">Удалить</button>
+                <button class="delete-btn">Удалить</button>
             </div>
         </div>
 
         <!-- Видео 3 -->
-        <div class="video-card">
-            <a href="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4" target="_blank">
-                <video class="video" muted preload="metadata"
-                       onmouseenter="this.play()" 
-                       onmouseleave="this.pause(); this.currentTime = 0;">
-                    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4" type="video/mp4">
-                </video>
-            </a>
+        <div class="video-card" data-src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4" data-title="Видео 3" data-channel="Канал 3" data-date="14.11.2025">
+            <video class="video" muted preload="metadata" onmouseenter="this.play()" onmouseleave="this.pause(); this.currentTime = 0;">
+                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4" type="video/mp4">
+            </video>
             <div class="video-description">
-                <h3>Название</h3>
-                <h5>Канал</h5>
+                <h3>Видео 3</h3>
+                <h5>Канал 3</h5>
                 <h5>Дата публикации: 14.11.2025</h5>
             </div>
             <div class="delete-row">
-              <button class="delete-btn">Удалить</button>
+                <button class="delete-btn">Удалить</button>
             </div>
         </div>
 
         <!-- Видео 4 -->
-        <div class="video-card">
-            <a href="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" target="_blank">
-                <video class="video" muted preload="metadata"
-                       onmouseenter="this.play()" 
-                       onmouseleave="this.pause(); this.currentTime = 0;">
-                    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
-                </video>
-            </a>
+        <div class="video-card" data-src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" data-title="Видео 4" data-channel="Канал 4" data-date="14.11.2025">
+            <video class="video" muted preload="metadata" onmouseenter="this.play()" onmouseleave="this.pause(); this.currentTime = 0;">
+                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+            </video>
             <div class="video-description">
-                <h3>Название</h3>
-                <h5>Канал</h5>
+                <h3>Видео 4</h3>
+                <h5>Канал 4</h5>
                 <h5>Дата публикации: 14.11.2025</h5>
             </div>
             <div class="delete-row">
-              <button class="delete-btn">Удалить</button>
+                <button class="delete-btn">Удалить</button>
             </div>
         </div>
 
         <!-- Видео 5 -->
-        <div class="video-card">
-            <a href="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" target="_blank">
-                <video class="video" muted preload="metadata"
-                       onmouseenter="this.play()" 
-                       onmouseleave="this.pause(); this.currentTime = 0;">
-                    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" type="video/mp4">
-                </video>
-            </a>
+        <div class="video-card" data-src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" data-title="Видео 5" data-channel="Канал 5" data-date="14.11.2025">
+            <video class="video" muted preload="metadata" onmouseenter="this.play()" onmouseleave="this.pause(); this.currentTime = 0;">
+                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" type="video/mp4">
+            </video>
             <div class="video-description">
-                <h3>Название</h3>
-                <h5>Канал</h5>
+                <h3>Видео 5</h3>
+                <h5>Канал 5</h5>
                 <h5>Дата публикации: 14.11.2025</h5>
             </div>
             <div class="delete-row">
-              <button class="delete-btn">Удалить</button>
+                <button class="delete-btn">Удалить</button>
             </div>
         </div>
 
         <!-- Видео 6 -->
-        <div class="video-card">
-            <a href="https://archive.org/download/ElephantsDream/ed_1024_512kb.mp4" target="_blank">
-                <video class="video" muted preload="metadata"
-                       onmouseenter="this.play()" 
-                       onmouseleave="this.pause(); this.currentTime = 0;">
-                    <source src="https://archive.org/download/ElephantsDream/ed_1024_512kb.mp4" type="video/mp4">
-                </video>
-            </a>
+        <div class="video-card" data-src="https://cdn.pixabay.com/video/2025/09/24/306155_tiny.mp4" data-title="Видео 6" data-channel="Канал 6" data-date="14.11.2025">
+            <video class="video" muted preload="metadata" onmouseenter="this.play()" onmouseleave="this.pause(); this.currentTime = 0;">
+                <source src="https://cdn.pixabay.com/video/2025/09/24/306155_tiny.mp4" type="video/mp4">
+            </video>
             <div class="video-description">
-                <h3>Название</h3>
-                <h5>Канал</h5>
+                <h3>Видео 6</h3>
+                <h5>Канал 6</h5>
                 <h5>Дата публикации: 14.11.2025</h5>
             </div>
             <div class="delete-row">
-              <button class="delete-btn">Удалить</button>
+                <button class="delete-btn">Удалить</button>
             </div>
         </div>
 
         <!-- Видео 7 -->
-        <div class="video-card">
-            <a href="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerSlides.mp4" target="_blank">
-                <video class="video" muted preload="metadata"
-                       onmouseenter="this.play()" 
-                       onmouseleave="this.pause(); this.currentTime = 0;">
-                    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerSlides.mp4" type="video/mp4">
-                </video>
-            </a>
+        <div class="video-card" data-src="https://cdn.pixabay.com/video/2022/11/03/137614-767056227_tiny.mp4" data-title="Видео 7" data-channel="Канал 7" data-date="14.11.2025">
+            <video class="video" muted preload="metadata" onmouseenter="this.play()" onmouseleave="this.pause(); this.currentTime = 0;">
+                <source src="https://cdn.pixabay.com/video/2022/11/03/137614-767056227_tiny.mp4" type="video/mp4">
+            </video>
             <div class="video-description">
-                <h3>Название</h3>
-                <h5>Канал</h5>
+                <h3>Видео 7</h3>
+                <h5>Канал 7</h5>
                 <h5>Дата публикации: 14.11.2025</h5>
             </div>
             <div class="delete-row">
-              <button class="delete-btn">Удалить</button>
+                <button class="delete-btn">Удалить</button>
             </div>
         </div>
 
         <!-- Видео 8 -->
-        <div class="video-card">
-            <a href="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4" target="_blank">
-                <video class="video" muted preload="metadata"
-                       onmouseenter="this.play()" 
-                       onmouseleave="this.pause(); this.currentTime = 0;">
-                    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4" type="video/mp4">
-                </video>
-            </a>
+        <div class="video-card" data-src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4" data-title="Видео 8" data-channel="Канал 8" data-date="14.11.2025">
+            <video class="video" muted preload="metadata" onmouseenter="this.play()" onmouseleave="this.pause(); this.currentTime = 0;">
+                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4" type="video/mp4">
+            </video>
             <div class="video-description">
-                <h3>Название</h3>
-                <h5>Канал</h5>
+                <h3>Видео 8</h3>
+                <h5>Канал 8</h5>
                 <h5>Дата публикации: 14.11.2025</h5>
             </div>
             <div class="delete-row">
-              <button class="delete-btn">Удалить</button>
+                <button class="delete-btn">Удалить</button>
             </div>
         </div>
 
         <!-- Видео 9 -->
-        <div class="video-card">
-            <a href="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" target="_blank">
-                <video class="video" muted preload="metadata"
-                       onmouseenter="this.play()" 
-                       onmouseleave="this.pause(); this.currentTime = 0;">
-                    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" type="video/mp4">
-                </video>
-            </a>
+        <div class="video-card" data-src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" data-title="Видео 9" data-channel="Канал 9" data-date="14.11.2025">
+            <video class="video" muted preload="metadata" onmouseenter="this.play()" onmouseleave="this.pause(); this.currentTime = 0;">
+                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" type="video/mp4">
+            </video>
             <div class="video-description">
-                <h3>Название</h3>
-                <h5>Канал</h5>
+                <h3>Видео 9</h3>
+                <h5>Канал 9</h5>
                 <h5>Дата публикации: 14.11.2025</h5>
             </div>
             <div class="delete-row">
-              <button class="delete-btn">Удалить</button>
+                <button class="delete-btn">Удалить</button>
             </div>
         </div>
 
         <!-- Видео 10 -->
-        <div class="video-card">
-            <a href="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4" target="_blank">
-                <video class="video" muted preload="metadata"
-                       onmouseenter="this.play()" 
-                       onmouseleave="this.pause(); this.currentTime = 0;">
-                    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4" type="video/mp4">
-                </video>
-            </a>
+        <div class="video-card" data-src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4" data-title="Видео 10" data-channel="Канал 10" data-date="14.11.2025">
+            <video class="video" muted preload="metadata" onmouseenter="this.play()" onmouseleave="this.pause(); this.currentTime = 0;">
+                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4" type="video/mp4">
+            </video>
             <div class="video-description">
-                <h3>Название</h3>
-                <h5>Канал</h5>
+                <h3>Видео 10</h3>
+                <h5>Канал 10</h5>
                 <h5>Дата публикации: 14.11.2025</h5>
             </div>
             <div class="delete-row">
-              <button class="delete-btn">Удалить</button>
+                <button class="delete-btn">Удалить</button>
             </div>
         </div>
     </div>
+
     <hr style="border: none; height: 3px; background-color: rgb(114, 112, 112); width: 100%;">
-</div>
-<div class="available_menu">
+
+    <div class="available_menu">
         <h3>Видео доступные к сохранению:</h3>
         <hr style="border: none; height: 2px; background-color: rgb(114, 112, 112); width: 100%;">
         <div id="no-videos" style="display: none; text-align:center; padding:20px;">
-    <h3>У вас нет доступных видео</h3>
-</div>
-        <!-- Видео 1 -->
+            <h3>У вас нет доступных видео</h3>
+        </div>
+
         <div class="available_videos" id="available-videos">
-            <div class="video-card">
-                <a href="https://cdn.pixabay.com/video/2016/06/27/3611-172488330_large.mp4" target="_blank">
-                    <video class="video" muted preload="metadata"
-                           onmouseenter="this.play()" 
-                           onmouseleave="this.pause(); this.currentTime = 0;">
-                        <source src="https://cdn.pixabay.com/video/2016/06/27/3611-172488330_large.mp4" type="video/mp4">
-                    </video>
-                </a>
+            <!-- Видео 1 -->
+            <div class="video-card" data-src="https://cdn.pixabay.com/video/2016/06/27/3611-172488330_large.mp4" data-title="Видео 11" data-channel="Канал 11" data-date="14.11.2025">
+                <video class="video" muted preload="metadata" onmouseenter="this.play()" onmouseleave="this.pause(); this.currentTime = 0;">
+                    <source src="https://cdn.pixabay.com/video/2016/06/27/3611-172488330_large.mp4" type="video/mp4">
+                </video>
                 <div class="video-description">
-                    <h3>Название</h3>
-                    <h5>Канал</h5>
+                    <h3>Видео 11</h3>
+                    <h5>Канал 11</h5>
                     <h5>Дата публикации: 14.11.2025</h5>
                 </div>
                 <div class="save-row">
-                  <button class="save-btn">Сохранить</button>
+                    <button class="save-btn">Сохранить</button>
                 </div>
             </div>
 
             <!-- Видео 2 -->
-            <div class="video-card">
-                <a href="https://cdn.pixabay.com/video/2017/05/06/9005-216332135_tiny.mp4" target="_blank">
-                    <video class="video" muted preload="metadata"
-                           onmouseenter="this.play()" 
-                           onmouseleave="this.pause(); this.currentTime = 0;">
-                        <source src="https://cdn.pixabay.com/video/2017/05/06/9005-216332135_tiny.mp4" type="video/mp4">
-                    </video>
-                </a>
+            <div class="video-card" data-src="https://cdn.pixabay.com/video/2017/05/06/9005-216332135_tiny.mp4" data-title="Видео 12" data-channel="Канал 12" data-date="14.11.2025">
+                <video class="video" muted preload="metadata" onmouseenter="this.play()" onmouseleave="this.pause(); this.currentTime = 0;">
+                    <source src="https://cdn.pixabay.com/video/2017/05/06/9005-216332135_tiny.mp4" type="video/mp4">
+                </video>
                 <div class="video-description">
-                    <h3>Название</h3>
-                    <h5>Канал</h5>
+                    <h3>Видео 12</h3>
+                    <h5>Канал 12</h5>
                     <h5>Дата публикации: 14.11.2025</h5>
                 </div>
                 <div class="save-row">
-                  <button class="save-btn">Сохранить</button>
+                    <button class="save-btn">Сохранить</button>
                 </div>
             </div>
 
-            <!-- Видео 3 -->
-            <div class="video-card">
-                <a href="https://cdn.pixabay.com/video/2020/05/22/39788-424022649_tiny.mp4" target="_blank">
-                    <video class="video" muted preload="metadata"
-                           onmouseenter="this.play()" 
-                           onmouseleave="this.pause(); this.currentTime = 0;">
-                        <source src="https://cdn.pixabay.com/video/2020/05/22/39788-424022649_tiny.mp4" type="video/mp4">
-                    </video>
-                </a>
-                <div class="video-description">
-                    <h3>Название</h3>
-                    <h5>Канал</h5>
-                    <h5>Дата публикации: 14.11.2025</h5>
-                </div>
-                <div class="save-row">
-                  <button class="save-btn">Сохранить</button>
-                </div>
-            </div>
+           <!-- Видео 3 -->
+<div class="video-card" data-src="https://cdn.pixabay.com/video/2020/05/22/39788-424022649_tiny.mp4" data-title="Видео 13" data-channel="Канал 13" data-date="14.11.2025">
+    <video class="video" muted preload="metadata" onmouseenter="this.play()" onmouseleave="this.pause(); this.currentTime = 0;">
+        <source src="https://cdn.pixabay.com/video/2020/05/22/39788-424022649_tiny.mp4" type="video/mp4">
+    </video>
+    <div class="video-description">
+        <h3>Видео 13</h3>
+        <h5>Канал 13</h5>
+        <h5>Дата публикации: 14.11.2025</h5>
+    </div>
+    <div class="save-row">
+        <button class="save-btn">Сохранить</button>
+    </div>
+</div>
 
-            <!-- Видео 4 -->
-            <div class="video-card">
-                <a href="https://cdn.pixabay.com/video/2015/11/11/1311-145406167_tiny.mp4" target="_blank">
-                    <video class="video" muted preload="metadata"
-                           onmouseenter="this.play()" 
-                           onmouseleave="this.pause(); this.currentTime = 0;">
-                        <source src="https://cdn.pixabay.com/video/2015/11/11/1311-145406167_tiny.mp4" type="video/mp4">
-                    </video>
-                </a>
-                <div class="video-description">
-                    <h3>Название</h3>
-                    <h5>Канал</h5>
-                    <h5>Дата публикации: 14.11.2025</h5>
-                </div>
-                <div class="save-row">
-                  <button class="save-btn">Сохранить</button>
-                </div>
-            </div>
+<!-- Видео 4 -->
+<div class="video-card" data-src="https://cdn.pixabay.com/video/2015/11/11/1311-145406167_tiny.mp4" data-title="Видео 14" data-channel="Канал 14" data-date="14.11.2025">
+    <video class="video" muted preload="metadata" onmouseenter="this.play()" onmouseleave="this.pause(); this.currentTime = 0;">
+        <source src="https://cdn.pixabay.com/video/2015/11/11/1311-145406167_tiny.mp4" type="video/mp4">
+    </video>
+    <div class="video-description">
+        <h3>Видео 14</h3>
+        <h5>Канал 14</h5>
+        <h5>Дата публикации: 14.11.2025</h5>
+    </div>
+    <div class="save-row">
+        <button class="save-btn">Сохранить</button>
+    </div>
+</div>
 
-            <!-- Видео 5 -->
-            <div class="video-card">
-                <a href="https://cdn.pixabay.com/video/2020/06/07/41315-429396382_tiny.mp4" target="_blank">
-                    <video class="video" muted preload="metadata"
-                           onmouseenter="this.play()" 
-                           onmouseleave="this.pause(); this.currentTime = 0;">
-                        <source src="https://cdn.pixabay.com/video/2020/06/07/41315-429396382_tiny.mp4" type="video/mp4">
-                    </video>
-                </a>
-                <div class="video-description">
-                    <h3>Название</h3>
-                    <h5>Канал</h5>
-                    <h5>Дата публикации: 14.11.2025</h5>
-                </div>
-                <div class="save-row">
-                  <button class="save-btn">Сохранить</button>
-                </div>
-            </div>
+<!-- Видео 5 -->
+<div class="video-card" data-src="https://cdn.pixabay.com/video/2020/06/07/41315-429396382_tiny.mp4" data-title="Видео 15" data-channel="Канал 15" data-date="14.11.2025">
+    <video class="video" muted preload="metadata" onmouseenter="this.play()" onmouseleave="this.pause(); this.currentTime = 0;">
+        <source src="https://cdn.pixabay.com/video/2020/06/07/41315-429396382_tiny.mp4" type="video/mp4">
+    </video>
+    <div class="video-description">
+        <h3>Видео 15</h3>
+        <h5>Канал 15</h5>
+        <h5>Дата публикации: 14.11.2025</h5>
+    </div>
+    <div class="save-row">
+        <button class="save-btn">Сохранить</button>
+    </div>
+</div>
 
-            <!-- Видео 6 -->
-            <div class="video-card">
-                <a href="https://cdn.pixabay.com/video/2021/01/03/61037-497754241_tiny.mp4" target="_blank">
-                    <video class="video" muted preload="metadata"
-                           onmouseenter="this.play()" 
-                           onmouseleave="this.pause(); this.currentTime = 0;">
-                        <source src="https://cdn.pixabay.com/video/2021/01/03/61037-497754241_tiny.mp4" type="video/mp4">
-                    </video>
-                </a>
-                <div class="video-description">
-                    <h3>Название</h3>
-                    <h5>Канал</h5>
-                    <h5>Дата публикации: 14.11.2025</h5>
-                </div>
-                <div class="save-row">
-                  <button class="save-btn">Сохранить</button>
-                </div>
+<!-- Видео 6 -->
+<div class="video-card" data-src="https://cdn.pixabay.com/video/2021/01/03/61037-497754241_tiny.mp4" data-title="Видео 16" data-channel="Канал 16" data-date="14.11.2025">
+    <video class="video" muted preload="metadata" onmouseenter="this.play()" onmouseleave="this.pause(); this.currentTime = 0;">
+        <source src="https://cdn.pixabay.com/video/2021/01/03/61037-497754241_tiny.mp4" type="video/mp4">
+    </video>
+    <div class="video-description">
+        <h3>Видео 16</h3>
+        <h5>Канал 16</h5>
+        <h5>Дата публикации: 14.11.2025</h5>
+    </div>
+    <div class="save-row">
+        <button class="save-btn">Сохранить</button>
+    </div>
+</div>
+
         </div>
-        </div>
+
         <hr style="border: none; height: 2px; background-color: rgb(114, 112, 112); width: 100%;">
     </div>
-    
+
     <script src="script.js"></script>
 </body>
 </html>

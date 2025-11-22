@@ -18,40 +18,49 @@ body {
     opacity: 0.8;
 }
 
+ .open-player { text-decoration: none; color: inherit; }
+
+        .videos-container {
+    display: flex;
+    justify-content: center; /* центрируем всю строку */
+}
+
 .videos {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.video-card {
-    display: flex;
-    flex-direction: column;
     gap: 15px;
-    align-items: flex-start;
-    border: 1px solid #ddd;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-
-    width: 330px;      /* нормальный размер карточки */
-    height: auto;      /* а не 100vh */
+    margin: 0px 0px 0px 60px;
+    justify-content: flex-start; /* элементы внутри строки с начала */
+    padding: 15px;
 }
 
-.video-card video {
-     width: 100%;
-    height: 180px;  /* фиксируем высоту */
-    object-fit: cover; /* обрезаем лишнее, но все видео будут одинаковой высоты */
-}
-.video-card video:hover {
-     filter: brightness(90%);
-}
-.video-description {
-    display: flex;
-    flex-direction: column;
-}
+
+        .video-card {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            width: 330px;
+            cursor: pointer;
+        }
+
+        .video-card video {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .video-card video:hover {
+            filter: brightness(90%);
+        }
+
+        .video-description {
+            display: flex;
+            flex-direction: column;
+        }
 
 h3 {
     color: #333333;

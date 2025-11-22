@@ -1,70 +1,71 @@
 
-function checkVideos() {
-    const container = document.getElementById('videos-container');
-    const message = document.getElementById('no-videos');
-
-    if (container.children.length === 0) {
-        message.style.display = "block";
-    } else {
-        message.style.display = "none";
-    }
-}
-function checkNoSavedVideos() {
-    noSavedMessage.style.display = savedContainer.children.length === 1 ? 'block' : 'none';
-}
-
-// Получаем контейнеры
 const savedContainer = document.getElementById('saved-videos');
 const availableContainer = document.getElementById('available-videos');
 const noVideosMessage = document.getElementById('no-videos');
-const noSavedMessage = document.getElementById('no-saved-videos'); // для сохранённых
+const noSavedMessage = document.getElementById('no-saved-videos');
 
-noSavedMessage.style.display = savedContainer.children.length === 0 ? 'block' : 'none';
-
-// Проверка на пустой блок сохраненных видео
-function checkNoVideos() {
-    if (savedContainer.children.length === 0) {
-        noVideosMessage.style.display = 'block';
-    } else {
-        noVideosMessage.style.display = 'none';
-    }
-}
-function checkNoAvailableVideos() {
-    const availableContainer = document.getElementById('available-videos');
-    const noVideosMessage = document.getElementById('no-videos');
-
-    if (availableContainer.children.length === 0) {
-        noVideosMessage.style.display = 'block';
-    } else {
-        noVideosMessage.style.display = 'none';
-    }
+function checkNoSavedVideos() {
+    const videoCards = savedContainer.querySelectorAll('.video-card'); // только видео
+    noSavedMessage.style.display = videoCards.length === 0 ? 'block' : 'none';
 }
 
-// Обработчик кнопок "Сохранить" и "Удалить"
+// Запуск при загрузке
+window.addEventListener('load', checkNoSavedVideos);
+
+// И после удаления/сохранения видео
+// например, внутри обработчика кнопок:
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('delete-btn')) {
+        const card = e.target.closest('.video-card');
+        card.remove();  // удаляем
+        checkNoSavedVideos(); // проверка после удаления
+    }
+});
+function updateMessages() {
+    const savedVideos = savedContainer.querySelectorAll('.video-card');
+    const availableVideos = availableContainer.querySelectorAll('.video-card');
+
+    noSavedMessage.style.display = savedVideos.length === 0 ? 'block' : 'none';
+    noVideosMessage.style.display = availableVideos.length === 0 ? 'block' : 'none';
+}
+
+// Обработчик кнопок "Сохранить" и "Удалить" через делегирование
 document.addEventListener('click', (e) => {
     if (e.target.classList.contains('save-btn') || e.target.classList.contains('delete-btn')) {
+        e.stopPropagation();
         const card = e.target.closest('.video-card');
 
-       if (e.target.classList.contains('save-btn')) {
-    savedContainer.appendChild(card);
-    e.target.textContent = 'Удалить';
-    e.target.classList.remove('save-btn');
-    e.target.classList.add('delete-btn');
-} else {
-    // перенос в доступные вместо удаления
-    availableContainer.appendChild(card);
-    e.target.textContent = 'Сохранить';
-    e.target.classList.remove('delete-btn');
-    e.target.classList.add('save-btn');
-}
-       checkNoVideos();         // проверка доступных видео
-        checkNoSavedVideos();    // проверка сохранённых видео
-        checkNoAvailableVideos();  // проверка доступных видео
+        if (e.target.classList.contains('save-btn')) {
+            savedContainer.appendChild(card);
+            e.target.textContent = 'Удалить';
+            e.target.classList.remove('save-btn');
+            e.target.classList.add('delete-btn');
+        } else {
+            availableContainer.appendChild(card);
+            e.target.textContent = 'Сохранить';
+            e.target.classList.remove('delete-btn');
+            e.target.classList.add('save-btn');
+        }
+
+        updateMessages();
     }
 });
 
-// Автозапуск при загрузке страницы
-window.addEventListener('load', checkNoVideos);
+// Обработчик клика по карточке для открытия видео
+document.querySelectorAll('.video-card').forEach(card => {
+    card.addEventListener('click', (e) => {
+        if (e.target.classList.contains('delete-btn') || e.target.classList.contains('save-btn')) return;
+
+        const data = {
+            src: card.dataset.src,
+            title: card.dataset.title,
+            channel: card.dataset.channel,
+            date: card.dataset.date
+        };
+        sessionStorage.setItem("videoData", JSON.stringify(data));
+        window.location.href = "../video-player/index.html";
+    });
+});
 
 // Предпросмотр видео при наведении
 document.querySelectorAll('video').forEach(video => {
@@ -73,12 +74,7 @@ document.querySelectorAll('video').forEach(video => {
         video.pause();
         video.currentTime = 0;
     });
-
-    // Полноэкран при клике
-    video.addEventListener('click', () => {
-        if (video.requestFullscreen) video.requestFullscreen();
-        else if (video.webkitRequestFullscreen) video.webkitRequestFullscreen();
-        else if (video.msRequestFullscreen) video.msRequestFullscreen();
-        video.play();
-    });
 });
+
+// Автозапуск при загрузке страницы
+window.addEventListener('load', updateMessages);
