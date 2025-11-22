@@ -16,6 +16,6 @@ document.querySelectorAll(".open-player").forEach(card => {
         }));
 
         // переходим в плеер
-        window.location.href = "../video-player/index.html";
+        window.location.href = "video-player/index.html";
     });
 });

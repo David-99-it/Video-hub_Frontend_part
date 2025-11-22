@@ -63,7 +63,7 @@ document.querySelectorAll('.video-card').forEach(card => {
             date: card.dataset.date
         };
         sessionStorage.setItem("videoData", JSON.stringify(data));
-        window.location.href = "../video-player/index.html";
+        window.location.href = "video-player/index.html";
     });
 });
 
